@@ -92,3 +92,9 @@ tab1, tab2, tab3, tab4 = st.tabs(["📊 Metrics","📈 Loss Curves","🧪 Sample
 
 # --- Metrics ---
 with tab1:
+    st.subheader("Model comparison")
+    if len(df):
+        st.dataframe(df.style.format(precision=4), use_container_width=True)
+    else:
+        st.info("No se encontró metrics.csv en assets/.")
+        
